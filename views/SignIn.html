@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="../css/main.css"> -->
+  <link rel="icon" href="../images/assets/footerlogo.jpg" />
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/library1.jpg);
+      background-size: cover;
+      filter: brightness(85%);
+    }
+
+    .library-logo {
+      width: 60px;
+      height: 50px;
+      float: left;
+      border-radius: 24%;
+    }
+
+    section {
+      padding: 15px;
+    }
+
+    form {
+      width: 35%;
+      display: block;
+      margin: 0px auto;
+    }
+
+    h1 {
+      display: flex;
+      padding-left: 15px;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+      text-decoration: none;
+      color: goldenrod;
+    }
+
+    input {
+      text-align: center;
+    }
+
+    .text-color {
+      color: gold;
+    }
+
+    .logoUp {
+      width: 80px;
+      height: 80px;
+      float: left;
+      border-radius: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <section>
+    <img class="logoUp" src="../images/assets/footerlogo.jpg" alt="Website_Logo" />
+    <h1 class="text-color" style="font-size: 30px;">Sign In to</br>&nbsp; A.I. Library</h1>
+  </section><br><br>
+  <section>
+    <form action="../controller/login.php" method="post">
+      <div class="mb-3">
+        <input type="email" name="username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          class="form-control" placeholder="Email: John@gmail.com">
+      </div>
+      <div class="mb-3">
+        <input type="text" name="password" id="*******" required placeholder="Password" class="form-control">
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" id="signin" name="signin" class="btn btn-outline-warning">Sign In</button>
+        <center><a class="text-color" href="../views/SignUp.html">Register?Don't have account.</a></center>
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>

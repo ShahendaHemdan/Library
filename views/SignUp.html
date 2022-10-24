@@ -1,0 +1,102 @@
+<html>
+
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../images/assets/footerlogo.jpg" />
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/library9.jpg);
+      background-size: cover;
+      filter: brightness(85%);
+    }
+
+    .library-logo {
+      width: 60px;
+      height: 50px;
+      float: left;
+      border-radius: 24%;
+    }
+
+    form {
+      width: 20%;
+      margin: 25px;
+    }
+
+    input {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="../controller/addUser.php" method="post">
+    <div class="mb-3">
+      <img class="library-logo" src="../images/assets/footerlogo.jpg" alt="Website_Logo" />
+      <h1 class="text-color" style="margin-left:10px;font-size: 27px;display: flex;padding-left: 15px;">
+        Registration</br> Form</h1>
+    </div><br>
+    <div class="mb-3" style="float: left;width:48%;margin-right: 8px;">
+      <input type="text" class="form-control" name="fname" required placeholder="First Name">
+    </div>
+    <div class="mb-3" style="float: left;width:47%;margin-left: 7px;">
+      <input type="text" class="form-control" name="lname" required placeholder="Last Name">
+    </div>
+    <div class="mb-3">
+      <input type="email" name="username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        class="form-control" placeholder="Email: John@gmail.com">
+    </div>
+    <div class="mb-3">
+      <input type="text" name="password" id="password" required placeholder="Password" class="form-control"
+        onchange="check_pass()">
+    </div>
+    <div class="mb-3">
+      <span style="font-weight: bold;float: right; color: red;" id='message'></span>
+      <input type="text" name="re-password" required id="re-password" class="form-control"
+        placeholder="Re-type Password" onchange="check_pass()">
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="M">
+      <label class="form-check-label text-color" style="font-weight:bold;" for="inlineRadio1">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="F">
+      <label class="form-check-label text-color" style="font-weight:bold;" for="inlineRadio2">Female</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="unknown">
+      <label class="form-check-label text-color" style="font-weight:bold;" for="inlineRadio2">Others</label>
+    </div>
+    <div class="form-check form-check-inline" style="margin: 5px 0px 5px 0px;">
+      <input class="form-check-input" type="Checkbox" required> </input>
+      <label class="form-check-label text-color" for="agree" style="font-size: 15px;"> I agree
+        with terms and
+        conditions </label>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="submit" class="btn btn-outline-warning" id="submit" name="submit" disabled>Submit</button>
+    </div>
+  </form>
+
+  <script>
+    function check_pass() {
+      let pass = document.getElementById('password').value;
+      let repass = document.getElementById('re-password').value;
+
+      if (pass === repass) {
+        document.getElementById('submit').disabled = false;
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'Matching';
+      } else {
+        document.getElementById('submit').disabled = true;
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = '*Not Valid';
+      }
+    }
+  </script>
+</body>
+
+</html>
